@@ -17,8 +17,12 @@
             <button type="submit"><i class="fas fa-magic"></i> Deteksi Tepi</button>
         </form>
 
+        {% if uploaded_image %}
+            <h3>Gambar Asli:</h3>
+            <img src="{{ url_for('static', filename=uploaded_image) }}" width="300px">
+            <h3>Hasil Edge Detection:</h3>
+            <img src="{{ url_for('static', filename=output_image) }}" width="300px">
+        {% endif %}
     </div>
-
-
 </body>
 </html> 
