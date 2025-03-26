@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <title>Edge Detection</title>
 </head>
 <body>
@@ -15,13 +17,18 @@
             </label>
             <input id="file-upload" type="file" name="file">
             <button type="submit"><i class="fas fa-magic"></i> Deteksi Tepi</button>
+            
         </form>
-
         {% if uploaded_image %}
+        <p>Image uploaded successfully!</p>
+        <div>
             <h3>Gambar Asli:</h3>
             <img src="{{ url_for('static', filename=uploaded_image) }}" width="300px">
+        </div>
+        <div>
             <h3>Hasil Edge Detection:</h3>
             <img src="{{ url_for('static', filename=output_image) }}" width="300px">
+        </div>
         {% endif %}
     </div>
 </body>
