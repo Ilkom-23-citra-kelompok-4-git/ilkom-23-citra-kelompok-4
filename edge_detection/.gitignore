@@ -1,5 +1,5 @@
 # Ignore uploaded images in static folder
-static/*
+static/*.png
 !static/style.css
 
 # Python virtual environment
