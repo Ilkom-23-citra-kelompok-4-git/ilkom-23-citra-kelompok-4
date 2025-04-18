@@ -8,3 +8,5 @@ from utils import (
 
 INPUT_PATH = 'images/sample.jpg'
 OUTPUT_DIR = 'output/'
+
+os.makedirs(OUTPUT_DIR, exist_ok=True)
