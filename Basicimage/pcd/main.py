@@ -5,3 +5,6 @@ from utils import (
     apply_gaussian_blur, apply_threshold,
     apply_canny
 )
+
+INPUT_PATH = 'images/sample.jpg'
+OUTPUT_DIR = 'output/'
