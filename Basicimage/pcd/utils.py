@@ -12,3 +12,6 @@ def apply_gaussian_blur(image, ksize=(5, 5)):
 def apply_threshold(image, thresh=127, maxval=255):
     _, result = cv2.threshold(image, thresh, maxval, cv2.THRESH_BINARY)
     return result
+
+def apply_canny(image, threshold1=100, threshold2=200):
+    return cv2.Canny(image, threshold1, threshold2)
