@@ -17,7 +17,7 @@ def edge_detection(image_path):
     timestamp = datetime.now().strftime("%Y%m%d%H%M%S")
     
     # Original
-    original_filename = os.path.basename(image_path)
+    original_filename, processed_filename = edge_detection(filepath)
     
     # Processed
     processed_filename = f"edge_{timestamp}.png"
@@ -47,7 +47,9 @@ def index():
             return redirect(request.url)
 
         if file:
-            filepath = os.path.join(UPLOAD_FOLDER, file.filename)
+            timestamp = datetime.now().strftime("%Y%m%d%H%M%S")
+            filename = f"{timestamp}_{file.filename}"
+            filepath = os.path.join(UPLOAD_FOLDER, filename)
             file.save(filepath)
             original_filename, processed_filename = edge_detection(filepath)
             uploaded_image = f"uploads/{original_filename}"
@@ -67,7 +69,7 @@ def index():
                 })
 
 
-    return render_template("index.html", original=base_name, processed=proc_file, history=history)
+    return render_template("index.html", original=uploaded_image, processed=output_image, history=history)
 
 if __name__ == "__main__":
     app.run(debug=True)
