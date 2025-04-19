@@ -67,10 +67,7 @@ def index():
                 })
 
 
-    return render_template("index.html",
-                           uploaded_image=uploaded_image,
-                           output_image=output_image,
-                           history=history)
+    return render_template("index.html", original=base_name, processed=proc_file, history=history)
 
 if __name__ == "__main__":
     app.run(debug=True)
