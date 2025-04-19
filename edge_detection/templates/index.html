@@ -32,6 +32,27 @@
             </div>
         </div>
         {% endif %}
+
+        {% if history %}
+            <hr>
+            <h3>Riwayat Hasil Edge Detection:</h3>
+            <div class="history-gallery">
+                {% for image in history %}
+                <div class="history-card">
+                    <div class="image-pair">
+                        <div>
+                            <h4>Asli</h4>
+                            <img src="{{ url_for('static', filename=image.original) }}" width="150">
+                        </div>
+                        <div>
+                            <h4>Edge</h4>
+                            <img src="{{ url_for('static', filename=image.processed) }}" width="150">
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        {% endif %}
     </div>
 </body>
 </html> 
