@@ -32,8 +32,6 @@ def get_history_images():
     return [f"history/{f}" for f in files if f.endswith((".png", ".jpg", ".jpeg"))]
 
 @app.route("/", methods=["GET", "POST"])
-@app.route("/", methods=["GET", "POST"])
-@app.route("/", methods=["GET", "POST"])
 def index():
     uploaded_image = None
     output_image = None
