@@ -35,3 +35,11 @@ def process_image():
     # Step 6: Adjust Brightness and Contrast
     adjusted = adjust_brightness_contrast(image)
     save_image('6_brightness_contrast.jpg', adjusted)
+
+    # Step 7: Resize Image
+    resized = resize_image(image)
+    save_image('7_resized.jpg', resized)
+
+    # Step 8: Rotate Image
+    rotated = rotate_image(image)
+    save_image('8_rotated.jpg', rotated)
