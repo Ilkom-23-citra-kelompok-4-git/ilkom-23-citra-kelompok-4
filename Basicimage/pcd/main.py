@@ -43,3 +43,11 @@ def process_image():
     # Step 8: Rotate Image
     rotated = rotate_image(image)
     save_image('8_rotated.jpg', rotated)
+
+     # Step 9: Crop Image (cut out part of the image)
+    cropped = crop_image(image)
+    save_image('9_cropped.jpg', cropped)
+
+    # Step 10: Flip Image horizontally
+    flipped = flip_image(image)
+    save_image('10_flipped.jpg', flipped)
