@@ -51,3 +51,13 @@ def process_image():
     # Step 10: Flip Image horizontally
     flipped = flip_image(image)
     save_image('10_flipped.jpg', flipped)
+
+    # Step 11: Histogram Equalization
+    hist_eq = apply_hist_equalization(gray)
+    save_image('11_hist_eq.jpg', hist_eq)
+
+    print("Proses selesai! Cek folder 'output/' untuk hasilnya.")
+
+# Execute the process
+if __name__ == "__main__":
+    process_image()
