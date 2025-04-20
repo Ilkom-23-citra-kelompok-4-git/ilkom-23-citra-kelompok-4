@@ -10,3 +10,10 @@ print("Original Grayscale:\n", image[y-1:y+2, x-1:x+2])
 # 2. Gaussian Blur
 blurred = cv2.GaussianBlur(image, (5,5), 1)
 print("\nGaussian Blur:\n", blurred[y-1:y+2, x-1:x+2].round(1))
+
+# 3. Gradien Sobel
+grad_x = cv2.Sobel(blurred, cv2.CV_64F, 1, 0, ksize=3)
+grad_y = cv2.Sobel(blurred, cv2.CV_64F, 0, 1, ksize=3)
+magnitude = np.sqrt(grad_x**2 + grad_y**2)
+direction = np.arctan2(grad_y, grad_x) * 180/np.pi
+print("\nMagnitudo Gradien:\n", magnitude[y-1:y+2, x-1:x+2].round(1))
