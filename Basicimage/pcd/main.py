@@ -10,3 +10,12 @@ from utils import (
 INPUT_PATH = 'images/sample.jpg'
 OUTPUT_DIR = 'output/'
 os.makedirs(OUTPUT_DIR, exist_ok=True)
+
+def process_image():
+    # Step 1: Load image
+    image = load_image(INPUT_PATH)
+    save_image('1_original.jpg', image)
+
+    # Step 2: Convert to Grayscale
+    gray = convert_to_grayscale(image)
+    save_image('2_grayscale.jpg', gray)
