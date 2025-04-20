@@ -8,4 +8,5 @@ terjadinya perubahan intensitas warna atau kecerahan yang tajam.
 perubahan intensitas secara horizontal dan vertikal.
 2. Prewitt: Memperkirakan respons maksimum dari sekumpulan kernel konvolusi untuk menemukan 
 orientasi tepi lokal untuk setiap elemen piksel 
-3. 
+3.	Roberts: Mendeteksi tepi berdasarkan perbedaan intensitas diagonal antar piksel yang 
+berdekatan.
