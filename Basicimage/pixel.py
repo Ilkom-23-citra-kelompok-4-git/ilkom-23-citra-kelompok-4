@@ -28,5 +28,17 @@ def non_max_suppression(mag, angle):
             # Tetangga berdasarkan arah gradien
             if angle[i,j] == 0:    # Horizontal
             elif angle[i,j] == 90: # Vertikal
-            neighbors = [mag[i-1,j], mag[i+1,j]]
+               neighbors = [mag[i-1,j], mag[i+1,j]]
                 neighbors = [mag[i,j-1], mag[i,j+1]]
+                else:                  # Diagonal
+                    neighbors = [mag[i-1,j-1], mag[i+1,j+1]] 
+                # Pertahankan hanya nilai maksimum lokal
+                if mag[i,j] >= max(neighbors):
+                    suppressed[i,j] = mag[i,j]
+    return suppressed
+suppressed = non_max_suppression(magnitude, direction)
+print("\nNon-Max Suppression:\n", suppressed[y-1:y+2, x-1:x+2].round(1))
+
+# 5. Hysteresis Thresholding (Canny Final)
+edges = cv2.Canny(image, 30, 100)  # Versi cepat (tanpa manual thresholding)
+print("\nCanny Edge:\n", edges[y-1:y+2, x-1:x+2])
