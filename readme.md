@@ -32,5 +32,11 @@ sehingga dapat mendeteksi tepi secara lebih halus dan akurat dibanding metode se
 4. Non-Maximum Suppression adalah proses menghilangkan piksel yang tidak berada di sepanjang 
 tepi yang paling kuat, hanya mempertahankan piksel dengan nilai gradien tertinggi dalam arah 
 gradien. Setelah menghitung gradien, arah gradien diambil untuk setiap piksel. piksel dengan 
-nilai gradien tertinggi dipertahankan, sementara yang lebih rendah akan dihapus. Sehingga menghasilkan gambar yang memiliki tepi lebih tajam dan lebih terdefinisi. 
-
+nilai gradien tertinggi dipertahankan, sementara yang lebih rendah akan dihapus. Sehingga 
+menghasilkan gambar yang memiliki tepi lebih tajam dan lebih terdefinisi. 
+5. Hysteresis Thresholding adalah proses pemilihan tepi dengan menggunakan dua nilai ambang 
+yaitu, tepi kuat dan tepi lemah. Piksel dianggap sebagai bagian dari tepi hanya jika mereka 
+terhubung dengan piksel tepi kuat. Piksel yang memiliki gradien di antara kedua ambang 
+dianggap tepi lemah. Tepi lemah hanya dianggap sebagai tepi jika terhubung ke tepi kuat. 
+Jika tidak, maka dihapus. Piksel tepi lemah yang terhubung ke tepi kuat dipertahankan 
+sebagai bagian dari tepi.
