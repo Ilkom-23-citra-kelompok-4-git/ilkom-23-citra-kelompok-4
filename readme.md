@@ -15,4 +15,4 @@ Edge detection membantu menyederhanakan gambar dengan hanya menampilkan informas
 3. Dengan mendeteksi tepi-tepi yang ada, kita bisa memahami bagaimana struktur atau susunan elemen dalam gambar tersebut. Ini sangat berguna untuk berbagai aplikasi, misalnya dalam analisis citra medis untuk
 melihat struktur organ tubuh, dalam pemetaan untuk mengenali batas-batas wilayah, atau dalam visi komputer untuk membantu robot mengenali lingkungan sekitarnya. Informasi struktur ini juga bisa menjadi dasar untuk proses rekonstruksi objek 3D dari citra 2D.
 
-# Pada percobaan ini, kami menggunakan metode deteksi tepi Canny. Metode Canny terdiri dari lima tahapan utama, yaitu:
+# Metode Canny terdiri dari lima tahapan utama, yaitu:
