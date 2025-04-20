@@ -4,7 +4,7 @@ import numpy as np
 # 1. Baca gambar dan pilih region 3x3
 image_rgb = cv2.imread("bangunan.jpg")  # Baca sebagai BGR
 image = cv2.cvtColor(image_rgb, cv2.COLOR_BGR2GRAY) 
-x, y = 553, 375  # Posisi tengah region
+x, y = 564, 382  # Posisi tengah region
 B, G, R = cv2.split(image_rgb)
 # print("Original image:\n", image_rgb[y-1:y+2, x-1:x+2])
 print(f"=== Region 3x3 di (x={x}, y={y}) ===")

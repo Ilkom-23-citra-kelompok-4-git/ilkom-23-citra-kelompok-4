@@ -27,7 +27,7 @@ gambar = load_image(path_gambar)
 # ================================================
 # 2. TAHAP 1: GAUSSIAN BLUR (PENGHALUSAN)
 # ================================================
-gambar_blur = cv2.GaussianBlur(gambar, (5, 5), 1)  # Sigma = 1
+gambar_blur = cv2.GaussianBlur(gambar, (3, 3), 1)  # Sigma = 1
 
 # ================================================
 # 3. TAHAP 2: GRADIEN (OPERATOR SOBEL)
