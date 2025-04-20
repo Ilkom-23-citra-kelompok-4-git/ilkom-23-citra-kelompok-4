@@ -73,3 +73,10 @@ tepi_tipis = non_max_suppression(magnitudo, arah)
 def hysteresis_threshold(gambar, rendah=30, tinggi=100):
     tepi_kuat = (gambar >= tinggi)
     tepi_lemah = (gambar >= rendah) & (gambar < tinggi)
+
+    # Hubungkan tepi lemah ke tepi kuat
+    for i in range(1, gambar.shape[0]-1):
+        for j in range(1, gambar.shape[1]-1):
+            if tepi_lemah[i,j] and np.any(tepi_kuat[i-1:i+2, j-1:j+2]):
+                tepi_kuat[i,j] = True
+    return tepi_kuat.astype(np.uint8) * 255
