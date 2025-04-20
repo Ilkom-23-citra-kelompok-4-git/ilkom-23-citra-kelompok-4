@@ -23,3 +23,8 @@ def load_image(path):
 # Ganti dengan path gambar Anda
 path_gambar = "bangunan.jpg"  # Contoh: "C:/folder/gambar.jpg"
 gambar = load_image(path_gambar)
+
+# ================================================
+# 2. TAHAP 1: GAUSSIAN BLUR (PENGHALUSAN)
+# ================================================
+gambar_blur = cv2.GaussianBlur(gambar, (5, 5), 1)  # Sigma = 1
