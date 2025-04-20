@@ -6,5 +6,6 @@ terjadinya perubahan intensitas warna atau kecerahan yang tajam.
 # Jenis-Jenis Edge Dection
 1. Sobel: Menggunakan operator konvolusi untuk mendeteksi tepi dengan mempertimbangkan 
 perubahan intensitas secara horizontal dan vertikal.
-2. Prewitt: Mirip Sobel, tetapi dengan kernel yang lebih sederhana untuk menghitung gradien 
-intensitas gambar.
+2. Prewitt: Memperkirakan respons maksimum dari sekumpulan kernel konvolusi untuk menemukan 
+orientasi tepi lokal untuk setiap elemen piksel 
+3. 
