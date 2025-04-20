@@ -16,3 +16,9 @@ Edge detection membantu menyederhanakan gambar dengan hanya menampilkan informas
 melihat struktur organ tubuh, dalam pemetaan untuk mengenali batas-batas wilayah, atau dalam visi komputer untuk membantu robot mengenali lingkungan sekitarnya. Informasi struktur ini juga bisa menjadi dasar untuk proses rekonstruksi objek 3D dari citra 2D.
 
 # Metode Canny terdiri dari lima tahapan utama, yaitu:
+1. Grayscale adalah format gambar yang hanya terdiri dari warna abu-abu, 
+tanpa warna lain seperti merah, hijau, atau biru. Setiap piksel dalam gambar grayscale 
+memiliki nilai intensitas dari hitam (0) ke putih (255).
+2. Gaussian Blur adalah metode menghaluskan gambar dengan menerapkan filter Gaussian untuk 
+mengurangi noise dan detail kecil. Ini berguna sebelum deteksi tepi, agar hasil tepinya 
+lebih halus dan akurat.
