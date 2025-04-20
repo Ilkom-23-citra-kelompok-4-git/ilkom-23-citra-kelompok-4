@@ -82,3 +82,14 @@ def hysteresis_threshold(gambar, rendah=30, tinggi=100):
     return tepi_kuat.astype(np.uint8) * 255
 
 tepi_final = hysteresis_threshold(tepi_tipis, 30, 100)
+
+# ================================================
+# 6. TAMPILKAN HASIL SETIAP TAHAP
+# ================================================
+judul = [
+    "1. Gambar Grayscale", 
+    "2. Gaussian Blur", 
+    "3. Magnitudo Gradien", 
+    "4. Non-Max Suppression", 
+    "5. Tepi Final (Canny)"
+]
