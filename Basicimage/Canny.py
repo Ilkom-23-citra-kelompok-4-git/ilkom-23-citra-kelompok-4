@@ -58,3 +58,48 @@ def non_max_suppression(magnitudo, arah):
                 tetangga = [magnitudo[i-1,j-1], magnitudo[i+1,j+1]]
             else:  # Handle kasus lainnya (jarang terjadi)
                 tetangga = []
+
+                # Pertahankan hanya nilai maksimum lokal
+            if len(tetangga) > 0 and magnitudo[i,j] >= max(tetangga):
+                tepi_tipis[i,j] = magnitudo[i,j]
+    return tepi_tipis
+
+
+tepi_tipis = non_max_suppression(magnitudo, arah)
+
+# ================================================
+# 5. TAHAP 4: HYSTERESIS THRESHOLDING (FILTER TEPI)
+# ================================================
+def hysteresis_threshold(gambar, rendah=30, tinggi=100):
+    tepi_kuat = (gambar >= tinggi)
+    tepi_lemah = (gambar >= rendah) & (gambar < tinggi)
+
+    # Hubungkan tepi lemah ke tepi kuat
+    for i in range(1, gambar.shape[0]-1):
+        for j in range(1, gambar.shape[1]-1):
+            if tepi_lemah[i,j] and np.any(tepi_kuat[i-1:i+2, j-1:j+2]):
+                tepi_kuat[i,j] = True
+    return tepi_kuat.astype(np.uint8) * 255
+
+tepi_final = hysteresis_threshold(tepi_tipis, 30, 100)
+
+# ================================================
+# 6. TAMPILKAN HASIL SETIAP TAHAP
+# ================================================
+judul = [
+    "1. Gambar Grayscale", 
+    "2. Gaussian Blur", 
+    "3. Magnitudo Gradien", 
+    "4. Non-Max Suppression", 
+    "5. Tepi Final (Canny)"
+]
+hasil = [gambar, gambar_blur, magnitudo, tepi_tipis, tepi_final]
+
+plt.figure(figsize=(12, 6))
+for i in range(5):
+    plt.subplot(2, 3, i+1)
+    plt.imshow(hasil[i], cmap='gray')
+    plt.title(judul[i])
+    plt.axis('off')
+    plt.tight_layout()
+    plt.show()
