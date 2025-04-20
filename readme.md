@@ -29,3 +29,8 @@ menghitung perubahan intensitas piksel secara horizontal dan vertikal. Setelah m
 gradien horizontal (Gx) dan vertikal (Gy), selanjutnya dilakukan perhitungan magnitudo dan 
 arah gradien. Operator Sobel bekerja dengan mengonvolusi gambar menggunakan kernel khusus, 
 sehingga dapat mendeteksi tepi secara lebih halus dan akurat dibanding metode sederhana.
+4. Non-Maximum Suppression adalah proses menghilangkan piksel yang tidak berada di sepanjang 
+tepi yang paling kuat, hanya mempertahankan piksel dengan nilai gradien tertinggi dalam arah 
+gradien. Setelah menghitung gradien, arah gradien diambil untuk setiap piksel. piksel dengan 
+nilai gradien tertinggi dipertahankan, sementara yang lebih rendah akan dihapus. Sehingga menghasilkan gambar yang memiliki tepi lebih tajam dan lebih terdefinisi. 
+
