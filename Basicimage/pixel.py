@@ -22,3 +22,6 @@ print("\nMagnitudo Gradien:\n", magnitude[y-1:y+2, x-1:x+2].round(1))
 def non_max_suppression(mag, angle):
     suppressed = np.zeros_like(mag)
     angle = np.round(angle / 45) * 45  # Quantisasi arah
+    
+    for i in range(1, mag.shape[0]-1):
+        for j in range(1, mag.shape[1]-1):
