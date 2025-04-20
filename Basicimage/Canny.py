@@ -93,3 +93,4 @@ judul = [
     "4. Non-Max Suppression", 
     "5. Tepi Final (Canny)"
 ]
+hasil = [gambar, gambar_blur, magnitudo, tepi_tipis, tepi_final]
