@@ -101,32 +101,5 @@ for i in range(5):
     plt.imshow(hasil[i], cmap='gray')
     plt.title(judul[i])
     plt.axis('off')
-
-    4. TAHAP 3: NON-MAXIMUM SUPPRESSION (PENIPISAN TEPI)
-# ================================================
-def non_max_suppression(magnitudo, arah):
-    tepi_tipis = np.zeros_like(magnitudo)
-    arah = np.round(arah / 45) * 45  # Bulatkan ke 0°, 45°, 90°, 135°
-    
-    for i in range(1, magnitudo.shape[0]-1):
-        for j in range(1, magnitudo.shape[1]-1):
-            # Tetangga berdasarkan arah gradien
-            if arah[i,j] == 0 or arah[i,j] == 180:    # Horizontal (Timur-Barat)
-                tetangga = [magnitudo[i,j-1], magnitudo[i,j+1]]
-            elif arah[i,j] == 45:  # Diagonal 45° (Kanan Atas-Kiri Bawah)
-                tetangga = [magnitudo[i-1,j+1], magnitudo[i+1,j-1]]
-            elif arah[i,j] == 90:  # Vertikal (Utara-Selatan)
-                tetangga = [magnitudo[i-1,j], magnitudo[i+1,j]]
-            elif arah[i,j] == 135: # Diagonal 135° (Kiri Atas-Kanan Bawah)
-                tetangga = [magnitudo[i-1,j-1], magnitudo[i+1,j+1]]
-            else:  # Handle kasus lainnya (jarang terjadi)
-                tetangga = []
-
-                # Pertahankan hanya nilai maksimum lokal
-            if len(tetangga) > 0 and magnitudo[i,j] >= max(tetangga):
-                tepi_tipis[i,j] = magnitudo[i,j]
-    return tepi_tipis
-
-
-plt.tight_layout()
-plt.show()
+    plt.tight_layout()
+    plt.show()
