@@ -66,3 +66,10 @@ def non_max_suppression(magnitudo, arah):
 
 
 tepi_tipis = non_max_suppression(magnitudo, arah)
+
+# ================================================
+# 5. TAHAP 4: HYSTERESIS THRESHOLDING (FILTER TEPI)
+# ================================================
+def hysteresis_threshold(gambar, rendah=30, tinggi=100):
+    tepi_kuat = (gambar >= tinggi)
+    tepi_lemah = (gambar >= rendah) & (gambar < tinggi)
