@@ -19,3 +19,11 @@ def process_image():
     # Step 2: Convert to Grayscale
     gray = convert_to_grayscale(image)
     save_image('2_grayscale.jpg', gray)
+
+    # Step 3: Apply Gaussian Blur
+    blurred = apply_gaussian_blur(gray)
+    save_image('3_blurred.jpg', blurred)
+
+    # Step 4: Apply Thresholding
+    thresholded = apply_threshold(gray)
+    save_image('4_threshold.jpg', thresholded)
