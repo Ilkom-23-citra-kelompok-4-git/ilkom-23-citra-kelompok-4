@@ -22,3 +22,10 @@ memiliki nilai intensitas dari hitam (0) ke putih (255).
 2. Gaussian Blur adalah metode menghaluskan gambar dengan menerapkan filter Gaussian untuk 
 mengurangi noise dan detail kecil. Ini berguna sebelum deteksi tepi, agar hasil tepinya 
 lebih halus dan akurat.
+3. Gradien adalah ukuran perubahan intensitas warna atau kecerahan antar piksel dalam suatu 
+gambar. Gradien menunjukkan seberapa cepat atau tajam perubahan tersebut terjadi dan arah 
+perubahannya. Pada tahap perhitungan gradien, kami menggunakan operator Sobel untuk 
+menghitung perubahan intensitas piksel secara horizontal dan vertikal. Setelah mendapatkan 
+gradien horizontal (Gx) dan vertikal (Gy), selanjutnya dilakukan perhitungan magnitudo dan 
+arah gradien. Operator Sobel bekerja dengan mengonvolusi gambar menggunakan kernel khusus, 
+sehingga dapat mendeteksi tepi secara lebih halus dan akurat dibanding metode sederhana.
