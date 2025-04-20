@@ -38,3 +38,23 @@ magnitudo = np.sqrt(gradien_x**2 + gradien_y**2)  # Kekuatan tepi
 arah = np.arctan2(gradien_y, gradien_x) * 180/np.pi  # Arah tepi (derajat)
 print("Magnitudo Gradien:", magnitudo[247,805].round(2))
 print("Arah Gradien (derajat):", arah[247,805].round(2))
+# ================================================
+# 4. TAHAP 3: NON-MAXIMUM SUPPRESSION (PENIPISAN TEPI)
+# ================================================
+def non_max_suppression(magnitudo, arah):
+    tepi_tipis = np.zeros_like(magnitudo)
+    arah = np.round(arah / 45) * 45  # Bulatkan ke 0°, 45°, 90°, 135°
+    
+    for i in range(1, magnitudo.shape[0]-1):
+        for j in range(1, magnitudo.shape[1]-1):
+            # Tetangga berdasarkan arah gradien
+            if arah[i,j] == 0 or arah[i,j] == 180:    # Horizontal (Timur-Barat)
+                tetangga = [magnitudo[i,j-1], magnitudo[i,j+1]]
+            elif arah[i,j] == 45:  # Diagonal 45° (Kanan Atas-Kiri Bawah)
+                tetangga = [magnitudo[i-1,j+1], magnitudo[i+1,j-1]]
+            elif arah[i,j] == 90:  # Vertikal (Utara-Selatan)
+                tetangga = [magnitudo[i-1,j], magnitudo[i+1,j]]
+            elif arah[i,j] == 135: # Diagonal 135° (Kiri Atas-Kanan Bawah)
+                tetangga = [magnitudo[i-1,j-1], magnitudo[i+1,j+1]]
+            else:  # Handle kasus lainnya (jarang terjadi)
+                tetangga = []
