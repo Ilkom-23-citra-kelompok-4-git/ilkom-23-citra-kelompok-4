@@ -58,3 +58,8 @@ def non_max_suppression(magnitudo, arah):
                 tetangga = [magnitudo[i-1,j-1], magnitudo[i+1,j+1]]
             else:  # Handle kasus lainnya (jarang terjadi)
                 tetangga = []
+
+                # Pertahankan hanya nilai maksimum lokal
+            if len(tetangga) > 0 and magnitudo[i,j] >= max(tetangga):
+                tepi_tipis[i,j] = magnitudo[i,j]
+    return tepi_tipis
