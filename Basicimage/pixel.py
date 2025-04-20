@@ -7,14 +7,14 @@ image = cv2.cvtColor(image_rgb, cv2.COLOR_BGR2GRAY)
 x, y = 806, 271  # Posisi tengah region
 B, G, R = cv2.split(image_rgb)
 # print("Original image:\n", image_rgb[y-1:y+2, x-1:x+2])
+print(f"=== Region 3x3 di (x={x}, y={y}) ===")
 print("Original image:\n")
 print("Nilai B channel:\n", B[y-1:y+2, x-1:x+2])
 print("Nilai G channel:\n", G[y-1:y+2, x-1:x+2])
 print("Nilai R channel:\n", R[y-1:y+2, x-1:x+2])
 
 # image = cv2.imread(image_rgb, cv2.IMREAD_GRAYSCALE)  # Langsung grayscale
-print(f"=== Region 3x3 di (x={x}, y={y}) ===")
-print("Original Grayscale:\n", image[y-1:y+2, x-1:x+2])
+print("\nOriginal Grayscale:\n", image[y-1:y+2, x-1:x+2])
 
 # 2. Gaussian Blur
 blurred = cv2.GaussianBlur(image, (5,5), 1)

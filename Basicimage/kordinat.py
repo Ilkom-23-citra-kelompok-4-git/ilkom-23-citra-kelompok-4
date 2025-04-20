@@ -14,7 +14,7 @@ def capture_region(event, x, y, flags, param):
         # Tampilkan visual
         marked = citragray.copy()
         cv2.rectangle(marked, (x-1,y-1), (x+1,y+1), (0,255,0), 1)  # Kotak hijau
-        cv2.imshow("Image", marked)
+        # cv2.imshow("Image", marked)
 
 
   # 3. Tampilkan gambar dan set callback
