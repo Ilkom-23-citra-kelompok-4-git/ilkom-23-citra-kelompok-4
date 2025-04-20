@@ -2,7 +2,7 @@ import cv2
 import matplotlib.pyplot as plt
 
 # Baca gambar
-image = cv2.imread('D:/MERINDA RISKI/ilkom-23-citra-kelompok-4/Basicimage/th.jpeg')
+image = cv2.imread('gambar.jpg')
 image_rgb = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
 
 # Tampilkan gambar asli
