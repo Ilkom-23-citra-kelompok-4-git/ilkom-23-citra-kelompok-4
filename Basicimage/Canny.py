@@ -128,4 +128,5 @@ def non_max_suppression(magnitudo, arah):
     return tepi_tipis
 
 
-tepi_tipis = non_max_suppression(magnitudo, arah)
+plt.tight_layout()
+plt.show()
