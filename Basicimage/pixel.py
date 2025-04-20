@@ -25,3 +25,6 @@ def non_max_suppression(mag, angle):
     
     for i in range(1, mag.shape[0]-1):
         for j in range(1, mag.shape[1]-1):
+            # Tetangga berdasarkan arah gradien
+            if angle[i,j] == 0:    # Horizontal
+                neighbors = [mag[i,j-1], mag[i,j+1]]
