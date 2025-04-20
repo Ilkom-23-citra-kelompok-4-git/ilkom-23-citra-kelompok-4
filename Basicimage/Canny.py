@@ -94,3 +94,10 @@ judul = [
     "5. Tepi Final (Canny)"
 ]
 hasil = [gambar, gambar_blur, magnitudo, tepi_tipis, tepi_final]
+
+plt.figure(figsize=(12, 6))
+for i in range(5):
+    plt.subplot(2, 3, i+1)
+    plt.imshow(hasil[i], cmap='gray')
+    plt.title(judul[i])
+    plt.axis('off')
