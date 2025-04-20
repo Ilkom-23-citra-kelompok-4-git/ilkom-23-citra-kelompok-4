@@ -80,3 +80,5 @@ def hysteresis_threshold(gambar, rendah=30, tinggi=100):
             if tepi_lemah[i,j] and np.any(tepi_kuat[i-1:i+2, j-1:j+2]):
                 tepi_kuat[i,j] = True
     return tepi_kuat.astype(np.uint8) * 255
+
+tepi_final = hysteresis_threshold(tepi_tipis, 30, 100)
