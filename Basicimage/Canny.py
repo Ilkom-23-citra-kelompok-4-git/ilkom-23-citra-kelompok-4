@@ -101,5 +101,6 @@ for i in range(5):
     plt.imshow(hasil[i], cmap='gray')
     plt.title(judul[i])
     plt.axis('off')
+    
 plt.tight_layout()
 plt.show()
