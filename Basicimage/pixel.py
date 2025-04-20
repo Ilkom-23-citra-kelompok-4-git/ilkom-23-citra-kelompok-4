@@ -17,3 +17,8 @@ grad_y = cv2.Sobel(blurred, cv2.CV_64F, 0, 1, ksize=3)
 magnitude = np.sqrt(grad_x**2 + grad_y**2)
 direction = np.arctan2(grad_y, grad_x) * 180/np.pi
 print("\nMagnitudo Gradien:\n", magnitude[y-1:y+2, x-1:x+2].round(1))
+
+# 4. Non-Maximum Suppression
+def non_max_suppression(mag, angle):
+    suppressed = np.zeros_like(mag)
+    angle = np.round(angle / 45) * 45  # Quantisasi arah
