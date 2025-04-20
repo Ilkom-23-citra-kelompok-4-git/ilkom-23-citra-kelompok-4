@@ -10,4 +10,6 @@ perubahan intensitas secara horizontal dan vertikal.
 orientasi tepi lokal untuk setiap elemen piksel 
 3.	Roberts: Mendeteksi tepi berdasarkan perbedaan intensitas diagonal antar piksel yang 
 berdekatan.
-4.	Laplacian of Gaussian (LoG): Operator turunan kedua yang mendeteksi lokasi tepi khususnya pada citra tepi yang curam 
+4.	Laplacian of Gaussian (LoG): Operator turunan kedua yang mendeteksi lokasi tepi 
+khususnya pada citra tepi yang curam 
+5. Canny: Teknik pengolahan citra digital yang populer untuk mengidentifikasi tepi objek dalam gambar 
