@@ -27,3 +27,11 @@ def process_image():
     # Step 4: Apply Thresholding
     thresholded = apply_threshold(gray)
     save_image('4_threshold.jpg', thresholded)
+
+    # Step 5: Apply Edge Detection
+    edges = apply_canny(gray)
+    save_image('5_canny.jpg', edges)
+
+    # Step 6: Adjust Brightness and Contrast
+    adjusted = adjust_brightness_contrast(image)
+    save_image('6_brightness_contrast.jpg', adjusted)
