@@ -18,10 +18,14 @@ melihat struktur organ tubuh, dalam pemetaan untuk mengenali batas-batas wilayah
 # Metode Canny terdiri dari lima tahapan utama, yaitu:
 1. Grayscale adalah format gambar yang hanya terdiri dari warna abu-abu, 
 tanpa warna lain seperti merah, hijau, atau biru. Setiap piksel dalam gambar grayscale 
-memiliki nilai intensitas dari hitam (0) ke putih (255).
+memiliki nilai intensitas dari hitam (0) ke putih (255). Nilai ini merepresentasikan
+seberapa terang atau gelap sebuah piksel. Gambar dalam format grayscale sering digunakan
+dalam pemrosesan citra digital karena lebih sederhana dan lebih efisien dibandingkan gambar
+berwarna, namun tetap mampu menyampaikan informasi visual yang cukup jelas, terutama untuk
+analisis bentuk, tekstur, atau pola.
 2. Gaussian Blur adalah metode menghaluskan gambar dengan menerapkan filter Gaussian untuk 
 mengurangi noise dan detail kecil. Ini berguna sebelum deteksi tepi, agar hasil tepinya 
-lebih halus dan akurat.
+lebih halus dan akurat. Filter ini menggunakan fungsi distribusi Gaussian untuk menghitung nilai rata-rata dari piksel-piksel di sekitarnya, sehingga menghasilkan efek blur yang lebih alami dan menyebar merata. Tujuan utama dari Gaussian Blur adalah untuk mengurangi noise (gangguan visual) dan menghilangkan detail-detail kecil yang tidak penting dalam gambar. Teknik ini sering digunakan sebagai langkah awal dalam proses pengolahan citra, terutama sebelum dilakukan deteksi tepi (edge detection).
 3. Gradien adalah ukuran perubahan intensitas warna atau kecerahan antar piksel dalam suatu 
 gambar. Gradien menunjukkan seberapa cepat atau tajam perubahan tersebut terjadi dan arah 
 perubahannya. Pada tahap perhitungan gradien, kami menggunakan operator Sobel untuk 
