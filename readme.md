@@ -25,7 +25,7 @@ berwarna, namun tetap mampu menyampaikan informasi visual yang cukup jelas, teru
 analisis bentuk, tekstur, atau pola.
 2. Gaussian Blur adalah metode menghaluskan gambar dengan menerapkan filter Gaussian untuk 
 mengurangi noise dan detail kecil. Ini berguna sebelum deteksi tepi, agar hasil tepinya 
-lebih halus dan akurat. Filter ini menggunakan fungsi distribusi Gaussian untuk menghitung nilai rata-rata dari piksel-piksel di sekitarnya, sehingga menghasilkan efek blur yang lebih alami dan menyebar merata. Tujuan utama dari Gaussian Blur adalah untuk mengurangi noise (gangguan visual) dan menghilangkan detail-detail kecil yang tidak penting dalam gambar.
+lebih halus dan akurat. Filter ini menggunakan fungsi distribusi Gaussian untuk menghitung nilai rata-rata dari piksel-piksel di sekitarnya, sehingga menghasilkan efek blur yang lebih alami dan menyebar merata. Tujuan utama dari Gaussian Blur adalah untuk mengurangi noise (gangguan visual) dan menghilangkan detail-detail kecil yang tidak penting dalam gambar. Teknik ini sering digunakan sebagai langkah awal dalam proses pengolahan citra, terutama sebelum dilakukan deteksi tepi (edge detection)
 3. Gradien adalah ukuran perubahan intensitas warna atau kecerahan antar piksel dalam suatu 
 gambar. Gradien menunjukkan seberapa cepat atau tajam perubahan tersebut terjadi dan arah 
 perubahannya. Pada tahap perhitungan gradien, kami menggunakan operator Sobel untuk 
