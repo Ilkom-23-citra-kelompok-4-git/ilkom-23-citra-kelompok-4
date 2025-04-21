@@ -4,7 +4,7 @@ import numpy as np
 # 1. Baca gambar dan pilih region 3x3
 image_rgb = cv2.imread("bangunan.jpg")  # Baca sebagai BGR
 image = cv2.cvtColor(image_rgb, cv2.COLOR_BGR2GRAY) 
-x, y = 564, 382  # Posisi tengah region
+x, y = 806, 279  # Posisi tengah region
 B, G, R = cv2.split(image_rgb)
 # print("Original image:\n", image_rgb[y-1:y+2, x-1:x+2])
 print(f"=== Region 3x3 di (x={x}, y={y}) ===")
@@ -26,6 +26,8 @@ grad_y = cv2.Sobel(blurred, cv2.CV_64F, 0, 1, ksize=3)
 magnitude = np.sqrt(grad_x**2 + grad_y**2)
 direction = np.arctan2(grad_y, grad_x) * 180/np.pi
 print("\nMagnitudo Gradien:\n", magnitude[y-1:y+2, x-1:x+2].round(1))
+print("Magnitudo Gradien:", magnitude[y,x].round(2))
+print("Arah Gradien (derajat):", direction[y,x].round(2))
 
 # 4. Non-Maximum Suppression
 def non_max_suppression(mag, angle):

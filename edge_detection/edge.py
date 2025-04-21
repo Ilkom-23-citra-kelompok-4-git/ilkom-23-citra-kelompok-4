@@ -13,7 +13,7 @@ app.config['PROCESSED_FOLDER'] = PROCESSED_FOLDER
 
 def edge_detection(image_path, color_hex):
     img_gray = cv2.imread(image_path, cv2.IMREAD_GRAYSCALE)
-    edges = cv2.Canny(img_gray, 50, 150)
+    edges = cv2.Canny(img_gray, 30, 100)
 
     # Konversi warna HEX ke BGR
     color_bgr = tuple(int(color_hex.lstrip('#')[i:i+2], 16) for i in (4, 2, 0))
