@@ -37,7 +37,8 @@ sehingga dapat mendeteksi tepi secara lebih halus dan akurat dibanding metode se
 tepi yang paling kuat, hanya mempertahankan piksel dengan nilai gradien tertinggi dalam arah 
 gradien. Setelah menghitung gradien, arah gradien diambil untuk setiap piksel. piksel dengan 
 nilai gradien tertinggi dipertahankan, sementara yang lebih rendah akan dihapus. Sehingga 
-menghasilkan gambar yang memiliki tepi lebih tajam dan lebih terdefinisi. 
+menghasilkan gambar yang memiliki tepi lebih tajam dan lebih terdefinisi.
+Proses ini sangat penting dalam tahap deteksi tepi, terutama dalam algoritma seperti Canny Edge Detection. Non-Maximum Suppression membantu mengurangi ketebalan tepi yang terdeteksi menjadi satu piksel, sehingga menghasilkan garis tepi yang lebih presisi.
 5. Hysteresis Thresholding adalah proses pemilihan tepi dengan menggunakan dua nilai ambang 
 yaitu, tepi kuat dan tepi lemah. Piksel dianggap sebagai bagian dari tepi hanya jika mereka 
 terhubung dengan piksel tepi kuat. Piksel yang memiliki gradien di antara kedua ambang 
