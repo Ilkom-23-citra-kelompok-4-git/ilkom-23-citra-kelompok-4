@@ -49,4 +49,4 @@ yaitu, tepi kuat dan tepi lemah. Piksel dianggap sebagai bagian dari tepi hanya 
 terhubung dengan piksel tepi kuat. Piksel yang memiliki gradien di antara kedua ambang 
 dianggap tepi lemah. Tepi lemah hanya dianggap sebagai tepi jika terhubung ke tepi kuat. 
 Jika tidak, maka dihapus. Piksel tepi lemah yang terhubung ke tepi kuat dipertahankan 
-sebagai bagian dari tepi.
+sebagai bagian dari tepi. Tepi lemah sendiri belum tentu merupakan bagian dari tepi akhir. Hanya jika tepi lemah tersebut terhubung dengan tepi kuat melalui jalur piksel yang berdekatan, maka ia dipertahankan sebagai bagian dari tepi.
