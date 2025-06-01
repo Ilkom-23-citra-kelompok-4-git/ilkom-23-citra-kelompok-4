@@ -55,5 +55,5 @@ def apply_sharpening_filter_numpy(image_path, output_path):
 
 # Example usage
 input_image_path = 'image/image1.jpg'  # Replace with your input image path
-output_image_path = 'sharpened ' + input_image_path + '.jpg'  # Replace with your desired output imagepath
+output_image_path = 'sharpened_image_numpy.jpg'  # Replace with your desired output path
 apply_sharpening_filter_numpy(input_image_path, output_image_path)
