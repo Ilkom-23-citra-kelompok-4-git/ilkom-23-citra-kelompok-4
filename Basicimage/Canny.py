@@ -21,7 +21,7 @@ def load_image(path):
     return gambar
 
 # Ganti dengan path gambar Anda
-path_gambar = "bangunan.jpg"  # Contoh: "C:/folder/gambar.jpg"
+path_gambar = "image/bangunan.jpg"  # Contoh: "C:/folder/gambar.jpg"
 gambar = load_image(path_gambar)
 
 # ================================================

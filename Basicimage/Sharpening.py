@@ -1,5 +1,6 @@
 import numpy as np
 from PIL import Image
+import matplotlib.pyplot as plt
 
 def apply_sharpening_filter_numpy(image_path, output_path):
     # Load the image
@@ -62,7 +63,20 @@ def apply_sharpening_filter_numpy(image_path, output_path):
 
     print(f"Sharpened image saved as {output_path}")
 
+    # Display the original and sharpened images
+    plt.figure(figsize=(10, 5))
+    plt.subplot(1, 2, 1)
+    plt.title("Original Image")
+    plt.imshow(img, cmap='gray')
+    plt.axis('off')
+
+    plt.subplot(1, 2, 2)
+    plt.title("Sharpened Image")
+    plt.imshow(output_img, cmap='gray')
+    plt.axis('off')
+
+    plt.show()
 # Example usage
-input_image_path = 'input/image1.jpg'  # Replace with your input image path
+input_image_path = 'image/bangunan.jpg'  # Replace with your input image path
 output_image_path = 'sharpened_image_numpy.jpg'  # Replace with your desired output path
 apply_sharpening_filter_numpy(input_image_path, output_image_path)

@@ -2,7 +2,7 @@ import cv2
 import numpy as np
 
 # 1. Baca gambar dan pilih region 3x3
-image_rgb = cv2.imread("bangunan.jpg")  # Baca sebagai BGR
+image_rgb = cv2.imread("image/bangunan.jpg")  # Baca sebagai BGR
 image = cv2.cvtColor(image_rgb, cv2.COLOR_BGR2GRAY) 
 x, y = 806, 279  # Posisi tengah region
 B, G, R = cv2.split(image_rgb)
