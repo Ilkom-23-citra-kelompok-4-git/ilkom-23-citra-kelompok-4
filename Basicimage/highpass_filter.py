@@ -31,7 +31,6 @@ print(high_pass_result[row:row+3, col:col+3])
 
 # 5. Tampilkan hasil gambar
 plt.figure(figsize=(10, 5))
-
 plt.subplot(1, 2, 1)
 plt.title("Gambar Asli (Grayscale)")
 plt.imshow(img, cmap='gray')
