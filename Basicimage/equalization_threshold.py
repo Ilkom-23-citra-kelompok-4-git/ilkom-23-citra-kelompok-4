@@ -29,3 +29,10 @@ path = "nana.jpeg"  # Ganti dengan path gambar kamu
 gambar = cv2.imread(path, cv2.IMREAD_GRAYSCALE)
 if gambar is None:
     raise ValueError("Gambar tidak ditemukan. Cek nama file dan path!")
+
+# 2. Histogram Equalization Manual
+hist = cv2.calcHist([gambar], [0], None, [256], [0,256]).ravel()
+total_pixel = np.sum(hist)
+pdf = hist / total_pixel
+cdf = np.cumsum(pdf)
+gambar_eq = np.round(cdf[gambar] * 255).astype(np.uint8)
