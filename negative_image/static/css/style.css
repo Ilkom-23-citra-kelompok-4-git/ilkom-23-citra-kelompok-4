@@ -1,8 +1,8 @@
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Funnel Sans', sans-serif;
     text-align: center;
     margin-top: 50px;
-    background: linear-gradient(to right,#00000090 4%,#ffffff 86%);
+    background: linear-gradient(75deg,#cf9bed90 4%,#7192da 86%);
 }
 
 form {
@@ -26,15 +26,60 @@ img {
     margin: 10px;
     border: 2px solid #ddd;
     border-radius: 10px;
+    margin-left: 5%;
 }
 
 .box {
-    padding-top: 15%;
-    background: linear-gradient(to left,#00000090 86%,#ffffff 4%);
+    background: #ffffff7b;
+    width: 65%;
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 40px;
+    display: grid;
+    gap: 20px;
+    position: relative;
+    border-radius: 30px;
 }
 
 .h1 {
     font-size: larger;
     text-align: center;
     text-transform: uppercase;
+}
+
+.container {
+    background: #ffffffb0;
+    width: 45%;
+    max-width: 1000px;
+    margin: 10px auto;
+    padding: 20px;
+    display: grid;
+    gap: 20px;
+    position: relative;
+    border-radius: 30px;
+}
+
+.square {
+    background: #ffffffb0;
+    width: 45%;
+    max-width: 1000px;
+    margin: 10px auto;
+    padding: 20px;
+    display: grid;
+    gap: 20px;
+    position: relative;
+    border-radius: 30px;
+    grid-template-columns: 1fr 2fr;
+}
+
+.kotak {
+    background: #ffffffb0;
+    width: 45%;
+    max-width: 1000px;
+    margin: 10px auto;
+    padding: 20px;
+    display: grid;
+    gap: 20px;
+    position: relative;
+    border-radius: 30px;
 }
