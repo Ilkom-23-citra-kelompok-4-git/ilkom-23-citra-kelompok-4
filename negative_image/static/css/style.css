@@ -30,6 +30,14 @@ img {
     height: auto;
 }
 
+canvas {
+    margin: 5px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    width: 200px;
+    height: auto;
+}
+
 .box {
     background: #ffffff7b;
     width: 65%;
