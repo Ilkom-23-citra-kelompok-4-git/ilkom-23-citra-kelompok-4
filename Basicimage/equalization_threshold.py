@@ -52,3 +52,8 @@ plt.show()
 print_matrix(gambar, x=50, y=50, label="Matriks Asli")
 print_matrix(gambar_eq, x=50, y=50, label="Setelah Equalization")
 print_matrix(gambar_thresh, x=50, y=50, label="Setelah Thresholding")
+
+# 6. Cek koordinat contoh
+cek_koordinat(gambar, x=52, y=52, label="Original")
+cek_koordinat(gambar_eq, x=52, y=52, label="Equalized")
+cek_koordinat(gambar_thresh, x=52, y=52, label="Thresholded")
