@@ -8,73 +8,75 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Chocolate+Classical+Sans&family=Funnel+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet"></head>
+    <link href="https://fonts.googleapis.com/css2?family=Chocolate+Classical+Sans&family=Funnel+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+</head>
 <body>
     <div class="box">
         <h1>IMAGE CONVERTER TO NEGATIVITY</h1>
-            <div class="container">
-                <h2>Upload Image to Convert to Negative</h2>
-                <form method="POST" enctype="multipart/form-data">
-                    <input type="file" name="image" accept="image/*" required>
-                    <button type="submit">Convert</button>
-                </form>
-            </div>
-
-            <div class="square">
-                <div class="kotak">
-                    <h2>Original Image:</h2>
-                    <canvas id="imageCanvas"></canvas>
-                    <p id="rgbOutput">Click to get RGB</p>
-                </div>
-
-                <div class="kotak">
-                    <h2>Negative Image:</h2>
-                    <canvas id="negativeCanvas"></canvas>
-                    <p id="rgbOutputNegative">Click to get RGB</p>
-                </div>
-            </div>
-
-                    <a href="{{ result }}" download>
-                        <button>Download Negative Image</button>
-                    </a>
-                {% endif %}
+        <div class="container">
+            <h2>Upload Image to Convert to Negative</h2>
+            <form method="POST" enctype="multipart/form-data">
+                <input type="file" name="image" accept="image/*" required>
+                <button type="submit">Convert</button>
+            </form>
         </div>
 
-        <script>
-            function loadCanvasWithClick(canvasId, imgUrl, outputId) {
-                const img = new Image();
-                img.crossOrigin = "Anonymous";
-                img.src = imgUrl;
+        {% if original and result %}
+        <div class="square">
+            <div class="kotak">
+                <h2>Original Image:</h2>
+                <canvas id="imageCanvas"></canvas>
+                <p id="rgbOutput">Click to get RGB</p>
+            </div>
 
-                img.onload = function () {
-                    const canvas = document.getElementById(canvasId);
-                    const ctx = canvas.getContext("2d");
+            <div class="kotak">
+                <h2>Negative Image:</h2>
+                <canvas id="negativeCanvas"></canvas>
+                <p id="rgbOutputNegative">Click to get RGB</p>
+            </div>
+        </div>
 
-                    canvas.width = img.naturalWidth;
-                    canvas.height = img.naturalHeight;
-                    ctx.drawImage(img, 0, 0);
+        <a href="{{ result }}" download>
+            <button>Download Negative Image</button>
+        </a>
+        {% endif %}
+    </div>
 
-                    canvas.addEventListener("click", function (e) {
-                        const rect = canvas.getBoundingClientRect();
-                        const x = Math.floor(e.clientX - rect.left);
-                        const y = Math.floor(e.clientY - rect.top);
-                        const pixel = ctx.getImageData(x, y, 1, 1).data;
-                        const [r, g, b] = pixel;
-                        document.getElementById(outputId).innerText =
-                            `(${x}, ${y}) → R: ${r}, G: ${g}, B: ${b}`;
-                    });
-                };
-            }
+    <script>
+        function loadCanvasWithClick(canvasId, imgUrl, outputId) {
+            const img = new Image();
+            img.crossOrigin = "Anonymous";
+            img.src = imgUrl;
 
-            window.onload = function () {
-                {% if original %}
-                loadCanvasWithClick("imageCanvas", "{{ original|tojson|safe }}", "rgbOutput");
-                {% endif %}
+            img.onload = function () {
+                const canvas = document.getElementById(canvasId);
+                const ctx = canvas.getContext("2d");
 
-                {% if result %}
-                loadCanvasWithClick("negativeCanvas", "{{ result|tojson|safe }}", "rgbOutputNegative");
-                {% endif %}
+                canvas.width = img.naturalWidth;
+                canvas.height = img.naturalHeight;
+                ctx.drawImage(img, 0, 0);
+
+                canvas.addEventListener("click", function (e) {
+                    const rect = canvas.getBoundingClientRect();
+                    const x = Math.floor(e.clientX - rect.left);
+                    const y = Math.floor(e.clientY - rect.top);
+                    const pixel = ctx.getImageData(x, y, 1, 1).data;
+                    const [r, g, b] = pixel;
+                    document.getElementById(outputId).innerText =
+                        `(${x}, ${y}) → R: ${r}, G: ${g}, B: ${b}`;
+                });
             };
-        </script>
+        }
+
+        window.onload = function () {
+            {% if original %}
+            loadCanvasWithClick("imageCanvas", {{ original|tojson|safe }}, "rgbOutput");
+            {% endif %}
+
+            {% if result %}
+            loadCanvasWithClick("negativeCanvas", {{ result|tojson|safe }}, "rgbOutputNegative");
+            {% endif %}
+        };
+    </script>
 </body>
 </html>
