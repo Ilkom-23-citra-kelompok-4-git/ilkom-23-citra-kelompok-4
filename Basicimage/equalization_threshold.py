@@ -17,3 +17,5 @@ def cek_koordinat(citra, x, y, label=""):
         if hasattr(nilai, 'round'):
             nilai = nilai.round(2)
         print(f"{label} pada koordinat ({y},{x}) = {nilai}")
+    except IndexError:
+        print(f"Koordinat ({y},{x}) di luar batas gambar.")
