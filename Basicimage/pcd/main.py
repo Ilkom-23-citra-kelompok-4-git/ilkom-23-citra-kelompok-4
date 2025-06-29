@@ -44,7 +44,7 @@ def process_image():
     rotated = rotate_image(image)
     save_image('8_rotated.jpg', rotated)
 
-     # Step 9: Crop Image (cut out part of the image)
+    # Step 9: Crop Image (cut out part of the image)
     cropped = crop_image(image)
     save_image('9_cropped.jpg', cropped)
 

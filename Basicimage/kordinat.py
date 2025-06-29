@@ -1,8 +1,8 @@
 import cv2
 
 # 1. Baca gambar
-image = cv2.imread("bangunan.jpg")
-citragray = cv2.imread("bangunan.jpg", cv2.IMREAD_GRAYSCALE)
+image = cv2.imread("image/bangunan.jpg")
+citragray = cv2.imread("image/bangunan.jpg", cv2.IMREAD_GRAYSCALE)
 
 # 2. Fungsi untuk handle klik mouse
 def capture_region(event, x, y, flags, param):

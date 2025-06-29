@@ -21,13 +21,13 @@ def load_image(path):
     return gambar
 
 # Ganti dengan path gambar Anda
-path_gambar = "bangunan.jpg"  # Contoh: "C:/folder/gambar.jpg"
+path_gambar = "image/bangunan.jpg"  # Contoh: "C:/folder/gambar.jpg"
 gambar = load_image(path_gambar)
 
 # ================================================
 # 2. TAHAP 1: GAUSSIAN BLUR (PENGHALUSAN)
 # ================================================
-gambar_blur = cv2.GaussianBlur(gambar, (5, 5), 1)  # Sigma = 1
+gambar_blur = cv2.GaussianBlur(gambar, (3, 3), 1)  # Sigma = 1
 
 # ================================================
 # 3. TAHAP 2: GRADIEN (OPERATOR SOBEL)
@@ -36,8 +36,6 @@ gradien_x = cv2.Sobel(gambar_blur, cv2.CV_64F, 1, 0, ksize=3)  # Gradien horizon
 gradien_y = cv2.Sobel(gambar_blur, cv2.CV_64F, 0, 1, ksize=3)  # Gradien vertikal
 magnitudo = np.sqrt(gradien_x**2 + gradien_y**2)  # Kekuatan tepi
 arah = np.arctan2(gradien_y, gradien_x) * 180/np.pi  # Arah tepi (derajat)
-print("Magnitudo Gradien:", magnitudo[247,805].round(2))
-print("Arah Gradien (derajat):", arah[247,805].round(2))
 # ================================================
 # 4. TAHAP 3: NON-MAXIMUM SUPPRESSION (PENIPISAN TEPI)
 # ================================================
@@ -70,7 +68,7 @@ tepi_tipis = non_max_suppression(magnitudo, arah)
 # ================================================
 # 5. TAHAP 4: HYSTERESIS THRESHOLDING (FILTER TEPI)
 # ================================================
-def hysteresis_threshold(gambar, rendah=30, tinggi=100):
+def hysteresis_threshold(gambar, rendah, tinggi):
     tepi_kuat = (gambar >= tinggi)
     tepi_lemah = (gambar >= rendah) & (gambar < tinggi)
 
@@ -81,7 +79,7 @@ def hysteresis_threshold(gambar, rendah=30, tinggi=100):
                 tepi_kuat[i,j] = True
     return tepi_kuat.astype(np.uint8) * 255
 
-tepi_final = hysteresis_threshold(tepi_tipis, 30, 100)
+tepi_final = hysteresis_threshold(tepi_tipis, 50, 150)
 
 # ================================================
 # 6. TAMPILKAN HASIL SETIAP TAHAP
