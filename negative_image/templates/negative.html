@@ -67,9 +67,12 @@
             }
 
             window.onload = function () {
-                {% if original and result %}
-                    loadCanvasWithClick("imageCanvas", "{{ original }}", "rgbOutput");
-                    loadCanvasWithClick("negativeCanvas", "{{ result }}", "rgbOutputNegative");
+                {% if original %}
+                loadCanvasWithClick("imageCanvas", "{{ original|tojson|safe }}", "rgbOutput");
+                {% endif %}
+
+                {% if result %}
+                loadCanvasWithClick("negativeCanvas", "{{ result|tojson|safe }}", "rgbOutputNegative");
                 {% endif %}
             };
         </script>
