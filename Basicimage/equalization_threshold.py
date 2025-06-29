@@ -19,3 +19,7 @@ def cek_koordinat(citra, x, y, label=""):
         print(f"{label} pada koordinat ({y},{x}) = {nilai}")
     except IndexError:
         print(f"Koordinat ({y},{x}) di luar batas gambar.")
+
+# ======================
+# Proses Utama
+# ======================
