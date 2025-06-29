@@ -36,3 +36,6 @@ total_pixel = np.sum(hist)
 pdf = hist / total_pixel
 cdf = np.cumsum(pdf)
 gambar_eq = np.round(cdf[gambar] * 255).astype(np.uint8)
+
+# 3. Thresholding
+_, gambar_thresh = cv2.threshold(gambar_eq, 127, 255, cv2.THRESH_BINARY)
