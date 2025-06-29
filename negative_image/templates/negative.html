@@ -10,32 +10,32 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Chocolate+Classical+Sans&family=Funnel+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet"></head>
 <body>
-    <box class="box">
+    <div class="box">
         <h1>IMAGE CONVERTER TO NEGATIVITY</h1>
-            <container class="container">
+            <div class="container">
                 <h2>Upload Image to Convert to Negative</h2>
                 <form method="POST" enctype="multipart/form-data">
                     <input type="file" name="image" accept="image/*" required>
                     <button type="submit">Convert</button>
                 </form>
-            </container>
+            </div>
 
-            <square class="square">
+            <div class="square">
                 {% if original and result %}
-                <kotak class="kotak">
+                <div class="kotak">
                     <h2>Original Image:</h2>
                     <img src="{{ original }}" width="300">
-                </kotak>
+                </div>
 
-                <kotak class="kotak">
+                <div class="kotak">
                     <h2>Negative Image:</h2>
-                    <img src="{{ result }}" width="300"><br><br>
+                    <img src="{{ result }}" width="300">
+                </div>
+            </div>
                     <a href="{{ result }}" download>
                         <button>Download Negative Image</button>
                     </a>
-                </kotak>
                 {% endif %}
-            </square>
-    </box>
+        </div>
 </body>
 </html>
