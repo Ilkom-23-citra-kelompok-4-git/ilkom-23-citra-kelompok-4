@@ -39,3 +39,11 @@ gambar_eq = np.round(cdf[gambar] * 255).astype(np.uint8)
 
 # 3. Thresholding
 _, gambar_thresh = cv2.threshold(gambar_eq, 127, 255, cv2.THRESH_BINARY)
+
+# 4. Tampilkan hasil
+plt.figure(figsize=(12, 4))
+plt.subplot(1,3,1); plt.imshow(gambar, cmap='gray'); plt.title("Original")
+plt.subplot(1,3,2); plt.imshow(gambar_eq, cmap='gray'); plt.title("Equalized")
+plt.subplot(1,3,3); plt.imshow(gambar_thresh, cmap='gray'); plt.title("Thresholded")
+plt.tight_layout()
+plt.show()
