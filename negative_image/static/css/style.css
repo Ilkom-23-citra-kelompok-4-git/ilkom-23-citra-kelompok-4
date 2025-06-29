@@ -98,3 +98,11 @@ canvas {
     flex-direction: column;
     margin-top: 20px;
 }
+
+#imageCanvas {
+    border: 2px solid black;
+    display: block;
+    max-width: 100%;
+    margin-bottom: 10px;
+    background: yellow;
+}

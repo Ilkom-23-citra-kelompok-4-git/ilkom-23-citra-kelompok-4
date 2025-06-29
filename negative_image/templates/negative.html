@@ -21,7 +21,6 @@
             </div>
 
             <div class="square">
-                {% if original and result %}
                 <div class="kotak">
                     <h2>Original Image:</h2>
                     <canvas id="imageCanvas"></canvas>
@@ -30,9 +29,11 @@
 
                 <div class="kotak">
                     <h2>Negative Image:</h2>
-                    <img src="{{ result }}" width="300">
+                    <canvas id="negativeCanvas"></canvas>
+                    <p id="rgbOutputNegative">Click to get RGB</p>
                 </div>
             </div>
+
                     <a href="{{ result }}" download>
                         <button>Download Negative Image</button>
                     </a>
@@ -40,34 +41,37 @@
         </div>
 
         <script>
-        function loadImageToCanvas(imgUrl) {
-            const img = new Image();
-            img.crossOrigin = "Anonymous";  // important for canvas access
-            img.src = imgUrl;
-            img.onload = function () {
-                const canvas = document.getElementById("imageCanvas");
-                const ctx = canvas.getContext("2d");
-                canvas.width = img.width;
-                canvas.height = img.height;
-                ctx.drawImage(img, 0, 0);
+            function loadCanvasWithClick(canvasId, imgUrl, outputId) {
+                const img = new Image();
+                img.crossOrigin = "Anonymous";
+                img.src = imgUrl;
+
+                img.onload = function () {
+                    const canvas = document.getElementById(canvasId);
+                    const ctx = canvas.getContext("2d");
+
+                    canvas.width = img.naturalWidth;
+                    canvas.height = img.naturalHeight;
+                    ctx.drawImage(img, 0, 0);
+
+                    canvas.addEventListener("click", function (e) {
+                        const rect = canvas.getBoundingClientRect();
+                        const x = Math.floor(e.clientX - rect.left);
+                        const y = Math.floor(e.clientY - rect.top);
+                        const pixel = ctx.getImageData(x, y, 1, 1).data;
+                        const [r, g, b] = pixel;
+                        document.getElementById(outputId).innerText =
+                            `(${x}, ${y}) → R: ${r}, G: ${g}, B: ${b}`;
+                    });
+                };
+            }
+
+            window.onload = function () {
+                {% if original and result %}
+                    loadCanvasWithClick("imageCanvas", "{{ original }}", "rgbOutput");
+                    loadCanvasWithClick("negativeCanvas", "{{ result }}", "rgbOutputNegative");
+                {% endif %}
             };
-        }
-
-        window.onload = function () {
-            loadImageToCanvas("{{ original }}"); // make sure this is from /static
-
-            const canvas = document.getElementById("imageCanvas");
-            canvas.addEventListener("click", function (e) {
-                const rect = canvas.getBoundingClientRect();
-                const x = Math.floor(e.clientX - rect.left);
-                const y = Math.floor(e.clientY - rect.top);
-                const ctx = canvas.getContext("2d");
-                const pixel = ctx.getImageData(x, y, 1, 1).data;
-                const [r, g, b] = pixel;
-                document.getElementById("rgbOutput").innerText =
-                    `(${x}, ${y}) → R: ${r}, G: ${g}, B: ${b}`;
-            });
-        };
         </script>
 </body>
 </html>
