@@ -21,12 +21,12 @@ kernel_high_pass = np.array([
 high_pass_result = cv2.filter2D(img, -1, kernel_high_pass)
 
 # 4. Tampilkan cuplikan matriks 3x3 dari posisi (50, 50)
-row, col = 100, 50  # kamu bisa ubah ini ke posisi lain
+row, col = 50, 50  # kamu bisa ubah ini ke posisi lain
 
-print("Patch 3x3 dari gambar asli (posisi 100,50):")
+print("Patch 3x3 dari gambar asli (posisi 50,50):")
 print(img[row:row+3, col:col+3])
 
-print("\nPatch 3x3 dari hasil high-pass filter (posisi 100,50):")
+print("\nPatch 3x3 dari hasil high-pass filter (posisi 50,50):")
 print(high_pass_result[row:row+3, col:col+3])
 
 # 5. Tampilkan hasil gambar
