@@ -47,3 +47,8 @@ plt.subplot(1,3,2); plt.imshow(gambar_eq, cmap='gray'); plt.title("Equalized")
 plt.subplot(1,3,3); plt.imshow(gambar_thresh, cmap='gray'); plt.title("Thresholded")
 plt.tight_layout()
 plt.show()
+
+# 5. Print nilai matriks kecil
+print_matrix(gambar, x=50, y=50, label="Matriks Asli")
+print_matrix(gambar_eq, x=50, y=50, label="Setelah Equalization")
+print_matrix(gambar_thresh, x=50, y=50, label="Setelah Thresholding")
