@@ -11,3 +11,10 @@ if gambar is None:
 # ==== Brightness Adjustment ====
 nilai_tambah = 50  # kamu bisa ubah ke -50 juga untuk menggelapkan
 gambar_terang = cv2.add(gambar, nilai_tambah)
+
+# ==== Visualisasi ====
+plt.figure(figsize=(10, 4))
+plt.subplot(1, 2, 1); plt.imshow(gambar, cmap='gray'); plt.title("Original")
+plt.subplot(1, 2, 2); plt.imshow(gambar_terang, cmap='gray'); plt.title(f"Brightness +{nilai_tambah}")
+plt.tight_layout()
+plt.show()
