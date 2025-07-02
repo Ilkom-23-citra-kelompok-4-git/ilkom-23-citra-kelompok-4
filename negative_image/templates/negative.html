@@ -12,7 +12,7 @@
 </head>
 <body>
     <div class="box">
-        <h1>IMAGE CONVERTER TO NEGATIVITY</h1>
+        <h1 class="fancy-title">IMAGE CONVERTER TO NEGATIVITY</h1>
         <div class="container">
             <h2>Upload Image to Convert to Negative</h2>
             <form method="POST" enctype="multipart/form-data">
@@ -36,9 +36,8 @@
             </div>
         </div>
 
-        <a href="{{ result }}" download>
-            <button>Download Negative Image</button>
-        </a>
+        <a href="{{ result }}" download="negative-image.jpg" class="download-btn">Download Negative Image</a>
+
         {% endif %}
     </div>
 
