@@ -3,7 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # ==== Load Gambar Grayscale ====
-path = "image/nana.jpg"
+path = "image/nana.jpeg"
 gambar = cv2.imread(path, cv2.IMREAD_GRAYSCALE)
 if gambar is None:
     raise ValueError("Gambar tidak ditemukan. Cek path dan nama file!")
