@@ -121,4 +121,6 @@ canvas {
 
 .download-btn:hover {
     background-color: #004999;
+    box-shadow: 0 0 10px #004999, 0 0 20px #004999;
+    transition: all 0.3s ease-in-out;
 }
