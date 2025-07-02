@@ -124,3 +124,12 @@ canvas {
     box-shadow: 0 0 10px #004999, 0 0 20px #004999;
     transition: all 0.3s ease-in-out;
 }
+
+.fancy-title {
+    background: linear-gradient(to right, #8f6ed5, #6ea0f1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 800;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
