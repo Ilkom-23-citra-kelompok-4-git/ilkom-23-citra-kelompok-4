@@ -25,7 +25,7 @@ def cek_koordinat(citra, x, y, label=""):
 # ======================
 
 # 1. Load gambar grayscale
-path = "image/nana.jpeg"  # Ganti dengan path gambar kamu
+path = "image/nana.jpeg"  # Ganti dengan path gambar Anda
 gambar = cv2.imread(path, cv2.IMREAD_GRAYSCALE)
 if gambar is None:
     raise ValueError("Gambar tidak ditemukan. Cek nama file dan path!")
