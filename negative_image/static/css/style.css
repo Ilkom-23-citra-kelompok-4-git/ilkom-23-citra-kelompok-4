@@ -107,3 +107,18 @@ canvas {
     margin-bottom: 10px;
     background: yellow;
 }
+
+.download-btn {
+    padding: 10px 20px;
+    background-color: #0066cc;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.download-btn:hover {
+    background-color: #004999;
+}
